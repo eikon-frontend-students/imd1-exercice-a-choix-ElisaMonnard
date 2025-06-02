@@ -2,11 +2,27 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <title>Jeu du Morpion</title>
+    <title>Error 404</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barricada&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Jeu du Morpion</h1>
+    <h1>Tic-Tac-Toe</h1>
+    <div class="message-404">
+      <p>Oups ! Tu t'es perdu dans la forêt...</p>
+      <p>Heureusement, un petit jeu t’attend pour retrouver ton chemin 🐾</p>
+    </div>
+    <div class="level-choice" id="level-choice">
+      <p>Choisis ton chemin pour sortir de la forêt :</p>
+      <button data-level="easy">À gauche</button>
+      <button data-level="medium">Tout droit</button>
+      <button data-level="hard">À droite</button>
+    </div>
+
     <div class="board" id="board"></div>
     <div class="status" id="status">Joueur X commence</div>
     <button class="reset" id="reset">Rejouer</button>
