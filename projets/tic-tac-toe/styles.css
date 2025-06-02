@@ -1,7 +1,7 @@
 body {
   font-family: sans-serif;
   text-align: center;
-  background: #f0f0f0;
+  background: #46ca1e;
 }
 h1 {
   margin-top: 20px;
@@ -15,7 +15,7 @@ h1 {
   width: max-content;
 }
 .cell {
-  background: white;
+  background: rgb(255, 255, 255);
   border: 2px solid #333;
   font-size: 3rem;
   display: flex;
@@ -35,4 +35,13 @@ h1 {
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
+}
+.cell img.symbol {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.cell:hover {
+  cursor: url("images/chaperon.png"), pointer;
 }

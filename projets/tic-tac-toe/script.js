@@ -32,7 +32,11 @@ function handleClick(e) {
   if (grid[index] || checkWinner()) return;
 
   grid[index] = currentPlayer;
-  e.target.textContent = currentPlayer;
+  const img = document.createElement("img");
+  img.src = currentPlayer === "X" ? "images/mouton.png" : "images/loup.jpg";
+  img.alt = currentPlayer;
+  img.className = "symbol";
+  e.target.appendChild(img);
   e.target.classList.add("taken");
 
   const winner = checkWinner();
@@ -52,7 +56,7 @@ function resetGame() {
   if (!statusText) return;
   statusText.textContent = "Joueur X commence";
   board.querySelectorAll(".cell").forEach((cell) => {
-    cell.textContent = "";
+    cell.innerHTML = "";
     cell.classList.remove("taken");
   });
 }
