@@ -1,11 +1,34 @@
+@font-face {
+  font-family: "barriecito";
+  src: url("fonts/Barriecito-Regular.woff2") format("woff2");
+}
+
 body {
-  font-family: sans-serif;
+  font-family: "barriecito", sans-serif;
   text-align: center;
   background: #46ca1e;
+  cursor: url("images/chaperon.png") 0 0, auto;
+  color: #133807;
 }
+
 h1 {
-  margin-top: 20px;
+  margin: 50px 0 20px;
+  font-size: 100px;
 }
+
+p,
+.message-404 {
+  color: inherit;
+}
+
+.message-404 {
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
 .board {
   display: grid;
   grid-template-columns: repeat(3, 100px);
@@ -14,36 +37,46 @@ h1 {
   margin: 20px auto;
   width: max-content;
 }
+
 .cell {
-  background: rgb(255, 255, 255);
+  background: #fff;
   border: 2px solid #333;
+  color: #5ae230;
+  border-radius: 10px;
   font-size: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .cell.taken {
   cursor: not-allowed;
 }
+
 .status {
   margin-top: 20px;
   font-size: 1.5rem;
 }
-.reset {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-}
+
 .cell img.symbol {
   width: 80%;
   height: 80%;
   object-fit: contain;
 }
 
-body {
-  font-family: sans-serif;
-  text-align: center;
-  background: #46ca1e;
-  cursor: url("images/chaperon.png") 0 0, auto;
+.level-choice {
+  margin-top: 40px;
+  font-size: 1.2rem;
+}
+
+.level-choice button,
+.reset {
+  color: #46ca1e;
+  background-color: #133807;
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-family: "barriecito", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
 }
