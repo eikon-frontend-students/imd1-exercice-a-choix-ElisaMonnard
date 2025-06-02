@@ -47,6 +47,9 @@ function handleClick(e) {
   } else {
     currentPlayer = currentPlayer === "X" ? "O" : "X";
     statusText.textContent = `À ${currentPlayer} de jouer`;
+    if (currentPlayer === "O") {
+      setTimeout(iaPlay, 500); // l'IA joue après 0.5s
+    }
   }
 }
 
@@ -75,3 +78,24 @@ function createBoard() {
 resetBtn.addEventListener("click", resetGame);
 
 createBoard();
+
+function iaPlay() {
+  // Vérifie que le jeu n’est pas déjà fini
+  if (checkWinner()) return;
+
+  // Cherche une case vide au hasard
+  const emptyIndices = grid
+    .map((val, idx) => (val === null ? idx : null))
+    .filter((val) => val !== null);
+
+  if (emptyIndices.length === 0) return;
+
+  const randomIndex =
+    emptyIndices[Math.floor(Math.random() * emptyIndices.length)];
+
+  // Simule un clic de l’IA sur la cellule
+  const cell = board.querySelector(`.cell[data-index="${randomIndex}"]`);
+  if (cell) {
+    cell.click();
+  }
+}

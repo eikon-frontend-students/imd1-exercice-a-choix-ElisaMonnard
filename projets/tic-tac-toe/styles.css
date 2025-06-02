@@ -21,7 +21,6 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
 }
 .cell.taken {
   cursor: not-allowed;
@@ -42,6 +41,9 @@ h1 {
   object-fit: contain;
 }
 
-.cell:hover {
-  cursor: url("images/chaperon.png"), pointer;
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background: #46ca1e;
+  cursor: url("images/chaperon.png") 0 0, auto;
 }
